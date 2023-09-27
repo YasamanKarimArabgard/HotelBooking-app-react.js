@@ -7,7 +7,7 @@ const Header = () => {
                 <div className="serach-lication flex justify-around flex-1">
                     <MapPinIcon className='w-6 h-6 text-orange-500' />
                     <input
-                        className='w-auto text-md'
+                        className='w-3/4 text-md h-auto p-1 px-2 rounded-md focus:outline-none focus:border focus:border-orange-300'
                         placeholder='search loaction'
                         id='destination'
                         name='destination'
