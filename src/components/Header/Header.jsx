@@ -1,15 +1,25 @@
 import { CalendarDaysIcon, MagnifyingGlassIcon, MapPinIcon, MinusCircleIcon, PlusCircleIcon } from '@heroicons/react/24/solid'
 import { useRef, useState } from 'react';
 import useClickOutside from '../../hooks/useClickOutside';
+import { DateRange } from 'react-date-range';
+import format from 'date-fns/format';
 
 const Header = () => {
 
     const [openOptions, setOpenOptions] = useState(false);
+    const [openDate, setOpenDate] = useState(false);
     const [options, setOptions] = useState({
         adult: 1,
         children: 2,
         room: 1
     })
+    const [date, setDate] = useState([{
+        startDate: new Date(),
+        endDate: new Date(),
+        key: 'selection',
+    }])
+
+    console.log(date);
 
     return (
         <header className="header_container col-span-10 col-start-2">
@@ -26,9 +36,19 @@ const Header = () => {
                 </div>
                 <span className='seperator text-slate-300 text-md'>|</span>
                 {/* date  bar */}
-                <div className='flex justify-around flex-1'>
+                <div className='flex justify-center gap-x-3 flex-1' onClick={() => setOpenDate(!openDate)}>
                     <CalendarDaysIcon className='w-6 h-6 text-blue-600' />
-                    <div className='clalender-date text-md'>1999/09/28</div>
+                    <div className='clalender-date text-md'>{`${format(date[0].startDate,'MM/dd/yyyy')} to ${format(date[0].endDate,'MM/dd/yyyy')}`}</div>
+                    {
+                        openDate &&
+                        <DateRange
+                            ranges={date}
+                            className='date absolute top-11 border rounded-lg'
+                            onChange={(item) => setDate([item.selection])}
+                            minDate={new Date()}
+                            moveRangeOnFirstSelection={true}
+                        />
+                    }
                 </div>
                 <span className='seperator text-slate-300 text-md'>|</span>
                 {/* quest options */}
@@ -53,7 +73,7 @@ function GusetOptions({ options, handleOptions, setOpenOptions }) {
     useClickOutside(optionsRef, 'guest-options', () => setOpenOptions(false))
     return (
         <div
-            className='guest-options w-36 max-w-auto bg-white rounded-md absolute top-7 right-[7em] border p-1 px-2 flex flex-col gap-y-2'
+            className='guest-options w-36 max-w-auto bg-white rounded-md absolute top-6 right-[7em] border p-1 px-2 flex flex-col gap-y-2'
             ref={optionsRef}>
             <GuestItem
                 handleOptions={handleOptions}
