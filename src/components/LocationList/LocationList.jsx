@@ -1,8 +1,11 @@
 import React from 'react';
+import useFetch from '../../hooks/useFetch';
 
 const LocationList = () => {
 
-    const { loading, data } = useFetch('https://localhost:5000/hotels');
+    const { loading, data } = useFetch('http://localhost:5000/hotels');
+
+    if(loading) return <p>loading...</p>
 
     return (
         <div className='locationList-container'>
