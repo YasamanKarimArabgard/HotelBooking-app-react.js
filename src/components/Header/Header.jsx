@@ -3,9 +3,11 @@ import { useRef, useState } from 'react';
 import useClickOutside from '../../hooks/useClickOutside';
 import { DateRange } from 'react-date-range';
 import format from 'date-fns/format';
+import { createSearchParams, useNavigate, useSearchParams } from 'react-router-dom';
 
 const Header = () => {
 
+    const [destination, setDestination] = useState('')
     const [openOptions, setOpenOptions] = useState(false);
     const [openDate, setOpenDate] = useState(false);
     const [options, setOptions] = useState({
@@ -19,10 +21,24 @@ const Header = () => {
         key: 'selection',
     }])
 
-    console.log(date);
+    const navigate = useNavigate();
+    const [searchParams, setSearchParams] = useSearchParams();
+
+    const handleSearach = () => {
+        const encodedParams = createSearchParams({
+            date: JSON.stringify(date),
+            destination,
+            options: JSON.stringify(options)
+        })
+        setSearchParams(encodedParams);
+        navigate({
+            pathname:'/hotels',
+            search:encodedParams.toString(),
+        })
+    }
 
     return (
-        <header className="header_container col-span-10 col-start-2">
+        <header className="header_container col-span-10 col-start-2 row-start-1">
             <nav className='nav h-12 bg-white border border-md rounded-xl m-auto flex justify-between items-center px-2 mt-2'>
                 {/* search bar */}
                 <div className="serach-lication flex justify-around flex-1">
@@ -38,7 +54,7 @@ const Header = () => {
                 {/* date  bar */}
                 <div className='flex justify-center gap-x-3 flex-1' onClick={() => setOpenDate(!openDate)}>
                     <CalendarDaysIcon className='w-6 h-6 text-blue-600' />
-                    <div className='clalender-date text-md'>{`${format(date[0].startDate,'MM/dd/yyyy')} to ${format(date[0].endDate,'MM/dd/yyyy')}`}</div>
+                    <div className='clalender-date text-md'>{`${format(date[0].startDate, 'MM/dd/yyyy')} to ${format(date[0].endDate, 'MM/dd/yyyy')}`}</div>
                     {
                         openDate &&
                         <DateRange
@@ -59,7 +75,7 @@ const Header = () => {
                     }
                 </div>
                 <div className='w-7 h-7 bg-blue-600 rounded-lg flex justify-center items-center cursor-pointer'>
-                    <MagnifyingGlassIcon className='w-5 h-5 text-white' />
+                    <MagnifyingGlassIcon className='w-5 h-5 text-white' onClick={() => handleSearach()} />
                 </div>
             </nav>
         </header>
@@ -73,7 +89,7 @@ function GusetOptions({ options, handleOptions, setOpenOptions }) {
     useClickOutside(optionsRef, 'guest-options', () => setOpenOptions(false))
     return (
         <div
-            className='guest-options w-36 max-w-auto bg-white rounded-md absolute top-6 right-[7em] border p-1 px-2 flex flex-col gap-y-2'
+            className='guest-options w-1/2 max-w-auto bg-white rounded-md absolute top-6 right-[5em] border p-1 px-2 flex flex-col gap-y-2'
             ref={optionsRef}>
             <GuestItem
                 handleOptions={handleOptions}
