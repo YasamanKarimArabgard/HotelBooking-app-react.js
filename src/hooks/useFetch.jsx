@@ -7,7 +7,7 @@ const useFetch = (dataUrl, dataQuery = '') => {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(false);
 
-    console.log(data);
+    // console.log(data);
 
     useEffect(() => {
         async function fetchData() {
