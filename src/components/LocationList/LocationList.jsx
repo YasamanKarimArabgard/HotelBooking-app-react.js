@@ -15,7 +15,7 @@ const LocationList = () => {
                             <div className='locationList_item flex flex-col justify-between h-60 rounded-sm overflow-hidden'>
                                 {/* item img */}
                                 <div className='ocationList_item-img h-40 max-h-40'>
-                                    <img src={item.picture_url.url} className='w-full h-full rounded-br-xl rounded-bl-xl' alt={item.name}/>
+                                    <img src={item.picture_url.url} className='w-full h-full rounded-tr-xl rounded-tl-xl' alt={item.name}/>
                                 </div>
                                 <div className='h-1/3 flex flex-col gap-y-1 p-1 justify-between'>
                                     <h2 className='font-bold text-sm'>{item.smart_location}</h2>
