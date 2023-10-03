@@ -6,7 +6,7 @@ import AppLayout from "./components/AppLayout/AppLayout";
 function App() {
   return (
     <main className="app flex justify-center">
-      <main className="main-app w-full bg-gray-50 min-h-screen max-w-screen-2xl max-w-screen grid grid-cols-12 grid-rows-[70px_minmax(200px,_1fr)_50px]">
+      <main className="main-app min-w-full w-screen bg-gray-50 min-h-screen max-w-screen-2xl grid grid-cols-12 grid-rows-[70px_minmax(200px,_1fr)_20px]">
         <Header />
         <Routes>
           <Route path="/" element={<LocationList />} />
