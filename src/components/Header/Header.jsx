@@ -7,7 +7,7 @@ import { createSearchParams, useNavigate, useSearchParams } from 'react-router-d
 
 const Header = () => {
 
-    const [destination, setDestination] = useState('')
+    const [destination, setDestination] = useState('');
     const [openOptions, setOpenOptions] = useState(false);
     const [openDate, setOpenDate] = useState(false);
     const [options, setOptions] = useState({
@@ -15,6 +15,7 @@ const Header = () => {
         children: 2,
         room: 1
     })
+    // console.log(options);
     const [date, setDate] = useState([{
         startDate: new Date(),
         endDate: new Date(),
@@ -32,8 +33,8 @@ const Header = () => {
         })
         setSearchParams(encodedParams);
         navigate({
-            pathname:'/hotels',
-            search:encodedParams.toString(),
+            pathname: '/hotels',
+            search: encodedParams.toString(),
         })
     }
 
@@ -44,10 +45,12 @@ const Header = () => {
                 <div className="serach-lication flex justify-around flex-1">
                     <MapPinIcon className='w-6 h-6 text-orange-500' />
                     <input
+                        value={destination}
                         className='w-3/4 text-md h-auto p-1 px-2 rounded-md focus:outline-none focus:border focus:border-orange-300'
-                        placeholder='search loaction'
+                        placeholder='Where to go ?'
                         id='destination'
                         name='destination'
+                        onChange={(e) => setDestination(e.target.value)}
                     />
                 </div>
                 <span className='seperator text-slate-300 text-md'>|</span>
@@ -85,39 +88,37 @@ const Header = () => {
 export default Header;
 
 function GusetOptions({ options, handleOptions, setOpenOptions }) {
+
     const optionsRef = useRef();
-    useClickOutside(optionsRef, 'guest-options', () => setOpenOptions(false))
+    useClickOutside(optionsRef, 'guest-options', () => setOpenOptions(false));
+
     return (
         <div
             className='guest-options w-1/2 max-w-auto bg-white rounded-md absolute top-6 right-[5em] border p-1 px-2 flex flex-col gap-y-2'
             ref={optionsRef}>
-            <GuestItem
-                handleOptions={handleOptions}
-                type='adult'
-                options={options}
-            />
-            <GuestItem
-                handleOptions={handleOptions}
-                type='adult'
-                options={options}
-            />  <GuestItem
-                handleOptions={handleOptions}
-                type='adult'
-                options={options}
-            />
+            {
+                Object.entries(options).map(([key, value]) => (
+                    <GuestItem
+                        handleOptions={handleOptions}
+                        type='adult'
+                        optionKey={key}
+                        optionValue={value}
+                    />
+                ))
+            }
         </div>
     )
 }
 
-function GuestItem() {
+function GuestItem({ optionKey, optionValue }) {
     return (
         <div className='guest-item flex justify-between'>
-            <span className='option text-md'>item</span>
+            <span className='option text-md'>{optionKey}</span>
             <div className='option-buttons flex-1 flex items-center gap-x-2 justify-end'>
                 <button className='w-6 h-6'>
                     <MinusCircleIcon className='text-slate-300 hover:text-red-600 hover:transition-3 hover:duration-300' />
                 </button>
-                <span className='text-md'>1</span>
+                <span className='text-md'>{optionValue}</span>
                 <button className='w-6 h-6'>
                     <PlusCircleIcon className='text-slate-300 hover:text-green-600 hover:transition-all hover:duration-300' />
                 </button>
