@@ -6,9 +6,9 @@ const LocationList = () => {
     const { loading, data } = useFetch('http://localhost:5000/hotels');
 
     return (
-        <div className='locationList-container flex flex-col row-start-2 col-start-2 col-span-10 bg-white rounded-lg border p-4 gap-y-3'>
+        <div className='locationList-container flex flex-col row-start-2 col-start-2 col-span-10 bg-white rounded-lg border p-4 gap-y-3 overflow-hidden'>
             <h2 className='font-bold lg:text-2xl'>Nearby Loactions</h2>
-            <div className='locationList grid md:grid-cols-3 lg:grid-cols-4 gap-y-2 gap-x-3'>
+            <div className='locationList grid md:grid-cols-3 lg:grid-cols-4 gap-y-2 gap-x-3 overflow-y-scroll'>
                 {
                     loading ? <p>loading...</p> :
                         data.map(item => (
