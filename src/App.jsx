@@ -2,6 +2,7 @@ import { Route, Router, Routes } from "react-router-dom";
 import Header from "./components/Header/Header";
 import LocationList from './components/LocationList/LocationList'
 import AppLayout from "./components/AppLayout/AppLayout";
+import Hotels from "./components/Hotels/Hotels";
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={<LocationList />} />
           <Route path="/hotels" element={<AppLayout />} >
-            <Route index element={<div>hotels</div>} />
+            <Route index element={<Hotels />} />
             <Route path=":id" element={<div>single hotels</div>} />
           </Route>
         </Routes>
