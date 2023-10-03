@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 
-const useFetch = (dataUrl, dataQuery = '') => {
+const useFetch = (dataUrl, dataQuery = "") => {
 
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -13,7 +13,7 @@ const useFetch = (dataUrl, dataQuery = '') => {
         async function fetchData() {
             setLoading(true)
             try {
-                const { data } = await axios.get(`${dataUrl}`);
+                const { data } = await axios.get(`${dataUrl}?${dataQuery}`);
                 setData(data);
                 setLoading(false);
             } catch (error) {
