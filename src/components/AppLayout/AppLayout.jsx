@@ -1,4 +1,5 @@
 import { Outlet } from "react-router-dom";
+import Map from "../Map/Map";
 
 const AppLayout = () => {
     return (
@@ -7,7 +8,7 @@ const AppLayout = () => {
                 <div className="w-2/5 overflow-y-scroll">
                     <Outlet />
                 </div>
-                <div className="w-3/5 bg-blue-100 rounded-tr-md rounded-br-md">map</div>
+                <Map />
             </div>
         </div>
     );
