@@ -7,7 +7,9 @@ import { createSearchParams, useNavigate, useSearchParams } from 'react-router-d
 
 const Header = () => {
 
-    const [destination, setDestination] = useState('');
+    const [searchParams, setSearchParams] = useSearchParams();
+    const navigate = useNavigate();
+    const [destination, setDestination] = useState(searchParams.get('destination') || "");
     const [openOptions, setOpenOptions] = useState(false);
     const [openDate, setOpenDate] = useState(false);
     const [options, setOptions] = useState({
@@ -15,20 +17,17 @@ const Header = () => {
         children: 2,
         room: 1
     })
-    // console.log(options);
+
     const [date, setDate] = useState([{
         startDate: new Date(),
         endDate: new Date(),
         key: 'selection',
     }])
 
-    const navigate = useNavigate();
-    const [searchParams, setSearchParams] = useSearchParams();
-
     const handleSearach = () => {
         const encodedParams = createSearchParams({
             date: JSON.stringify(date),
-            destination,
+            destination: destination,
             options: JSON.stringify(options)
         })
         setSearchParams(encodedParams);
