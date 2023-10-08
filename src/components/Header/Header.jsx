@@ -61,7 +61,7 @@ const Header = () => {
                         openDate &&
                         <DateRange
                             ranges={date}
-                            className='date absolute top-11 border rounded-lg'
+                            className='date absolute top-11 border rounded-lg z-[2000]'
                             onChange={(item) => setDate([item.selection])}
                             minDate={new Date()}
                             moveRangeOnFirstSelection={true}
@@ -93,7 +93,7 @@ function GusetOptions({ options, handleOptions, setOpenOptions }) {
 
     return (
         <div
-            className='guest-options w-1/2 max-w-auto bg-white rounded-md absolute top-6 right-[5em] border p-1 px-2 flex flex-col gap-y-2'
+            className='guest-options w-1/2 max-w-auto bg-white rounded-md absolute top-6 right-[5em] border p-1 px-2 flex flex-col gap-y-2 z-[1000]'
             ref={optionsRef}>
             {
                 Object.entries(options).map(([key, value]) => (
