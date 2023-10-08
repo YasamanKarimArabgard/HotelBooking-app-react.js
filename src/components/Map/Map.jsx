@@ -1,14 +1,18 @@
 import { useEffect, useState } from "react";
 import { useHotels } from "../Context/HotelsProvider";
+import useGeoLoaction from '../../hooks/useGeoLoaction';
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
-import 'leaflet/dist/leaflet.css';
 import { useSearchParams } from "react-router-dom";
+import 'leaflet/dist/leaflet.css';
+
 
 const Map = () => {
 
     const { loading, hotels } = useHotels();
+    const { loading: isLoactionloading, position: geoCurrentLocation, getPosition } = useGeoLoaction();
     const [mapPosition, setMapPOsition] = useState([50, 4]);
     const [searchParams, setSearchParams] = useSearchParams();
+
 
     const lat = searchParams.get('lat');
     const lng = searchParams.get('lng');
@@ -17,6 +21,12 @@ const Map = () => {
         if (lat && lng) setMapPOsition([lat, lng])
     }, [lat, lng]);
 
+    useEffect(() => {
+        if (geoCurrentLocation?.lat && geoCurrentLocation?.lng) {
+            setMapPOsition([geoCurrentLocation.lat, geoCurrentLocation.lng])
+        }
+    }, [geoCurrentLocation])
+
     return (
         <div className="w-3/5 rounded-tr-md rounded-br-md flex items-center justify-center">
             <MapContainer
@@ -24,6 +34,9 @@ const Map = () => {
                 center={mapPosition}
                 zoom={13}
                 scrollWheelZoom={true}>
+                <button
+                    onClick={(e) => getPosition(e)}
+                    className="absolute bottom-5 left-5 bg-orange-500 z-[1000] p-1 px-2 rounded-md text-white font-bold shadow-xl">{isLoactionloading ? 'Loading...' : 'Your current position'}</button>
                 <TileLayer
                     attribution='&copy;<a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
