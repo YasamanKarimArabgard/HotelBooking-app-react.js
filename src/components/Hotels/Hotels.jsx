@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 import { useHotels } from "../Context/HotelsProvider";
+import Loader from "../Loader/Loader";
 
 const Hotels = () => {
 
     const { loading, hotels, currHotel } = useHotels();
 
-    if (loading) return <p>loading...</p>
+    if (loading) return <Loader />
 
     return (
         <div className="hotels_container flex flex-col gap-y-2 m-1">
@@ -13,7 +14,7 @@ const Hotels = () => {
             {
                 hotels.map(item => (
                     <Link key={item.id} to={`/hotels/${item.id}?lat=${item.latitude}&lng=${item.longitude}`}>
-                        <div className={`flex gap-x-3 h-fit rounded-xl p-1 ${item.id === currHotel?.id ? 'bg-orange-200' : ''}`}>
+                        <div className={`flex gap-x-3 h-fit rounded-xl p-1 hover:bg-orange-50 ${item.id === currHotel?.id ? 'bg-orange-200' : ''}`}>
                             <div className="w-24">
                                 <img src={item.picture_url.url} className="w-full h-20 rounded-xl" />
                             </div>
