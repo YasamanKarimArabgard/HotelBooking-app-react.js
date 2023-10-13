@@ -1,36 +1,34 @@
 import React, { createContext, useContext, useState } from 'react';
 import useFetch from '../../hooks/useFetch';
+import axios from 'axios';
 
 const BookmarkContext = createContext();
 
-const BookmarkProvider = ({children}) => {
+const BookmarkProvider = ({ children }) => {
 
-    const [bookmarks, setBookmarks] = useState({});
-    const [loadingBookmark, setLoadingBookmarks] = useState(false);
+    const [singleBookmark, setSingleBookmark] = useState([]);
+    const [loadingSingleBookmark, setLoadingSingleBookmarks] = useState(false);
 
-    const Base_Url = 'http://localhost:5000';
+    const Base_Url = 'http://localhost:5000/bookmarks';
 
-    const { loading, data: bookmark } = useFetch(`${Base_Url}/bookmarks`);
-
-    console.log(bookmark);
+    const { loading, data: bookmarkList } = useFetch(`${Base_Url}`)
 
 
-    async function getBookmark(id) {
-        setLoadingBookmarks(true);
+    async function getSingleBookmark(id) {
+        setLoadingSingleBookmarks(true);
         try {
-            const { data } = await axios.get(`${Base_Url}/${id}`)
-            console.log(data);
-            setBookmarks(data)
-            setLoadingBookmarks(false)
+            const { data: singleBookmark } = await axios.get(`${Base_Url}/${id}`);
+            setSingleBookmark(singleBookmark)
+            setLoadingSingleBookmarks(false)
         }
         catch (error) {
             console.log(error);
-            setLoadingBookmarks(false)
+            setLoadingSingleBookmarks(false)
         }
     }
 
     return (
-        <BookmarkContext.Provider value={{ bookmarks, loadingBookmark, getBookmark, loading , bookmark}}>
+        <BookmarkContext.Provider value={{ singleBookmark, loadingSingleBookmark, getSingleBookmark, loading, bookmarkList }}>
             {children}
         </BookmarkContext.Provider>
     );
