@@ -1,14 +1,12 @@
 import { useEffect, useState } from "react";
-import { useHotels } from "../Context/HotelsProvider";
 import useGeoLoaction from '../../hooks/useGeoLoaction';
-import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
-import { useSearchParams } from "react-router-dom";
+import { MapContainer, TileLayer, Marker, Popup, useMap, useMapEvent } from "react-leaflet";
+import { useSearchParams, useNavigate } from "react-router-dom";
 import 'leaflet/dist/leaflet.css';
 
 
-const Map = () => {
+const Map = ({ markerLoactions }) => {
 
-    const { loading, hotels } = useHotels();
     const { loading: isLoactionloading, position: geoCurrentLocation, getPosition } = useGeoLoaction();
     const [mapPosition, setMapPOsition] = useState([50, 4]);
     const [searchParams, setSearchParams] = useSearchParams();
@@ -28,7 +26,7 @@ const Map = () => {
     }, [geoCurrentLocation])
 
     return (
-        <div className="w-3/5 rounded-tr-md rounded-br-md flex items-center justify-center">
+        <div className="w-4/6 rounded-tr-md rounded-br-md flex items-center justify-center">
             <MapContainer
                 className="map"
                 center={mapPosition}
@@ -41,9 +39,10 @@ const Map = () => {
                     attribution='&copy;<a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
                 />
+                <DetectClick />
                 <ChangeCenter position={mapPosition} />
                 {
-                    hotels.map(item => (
+                    markerLoactions.map(item => (
                         <Marker key={item.id} position={[item.latitude, item.longitude]}>
                             <Popup>{item.host_location}</Popup>
                         </Marker>
@@ -59,5 +58,13 @@ export default Map;
 function ChangeCenter({ position }) {
     const map = useMap();
     map.setView(position);
+    return null;
+}
+
+function DetectClick() {
+    const navigate = useNavigate()
+    useMapEvent({
+        click: e => navigate(`/bookmarks/add?lat=${e.latlng.lat}&lng=${e.latlng.lng}`)
+    })
     return null;
 }
