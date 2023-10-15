@@ -1,4 +1,4 @@
-import { CalendarDaysIcon, MagnifyingGlassIcon, MapPinIcon, MinusCircleIcon, PlusCircleIcon } from '@heroicons/react/24/solid';
+import { CalendarDaysIcon, MagnifyingGlassIcon, MapPinIcon, MinusCircleIcon, PlusCircleIcon , Bars3Icon} from '@heroicons/react/24/solid';
 import { useRef, useState } from 'react';
 import useClickOutside from '../../hooks/useClickOutside';
 import { DateRange } from 'react-date-range';
@@ -40,8 +40,9 @@ const Header = () => {
     return (
         <header className="header_container col-span-10 col-start-2 row-start-1">
             <nav className='nav h-12 bg-white border border-md rounded-xl m-auto flex justify-between items-center px-2 mt-2'>
+                <Bars3Icon className='w-8 h-8 text-slate-600 cursor-pointer xl:hidden' />
                 {/* search bar */}
-                <div className="serach-lication flex justify-around flex-1">
+                <div className="serach-lication hidden xl:flex justify-around flex-1">
                     <MapPinIcon className='w-6 h-6 text-orange-500' />
                     <input
                         value={destination}
@@ -52,9 +53,9 @@ const Header = () => {
                         onChange={(e) => setDestination(e.target.value)}
                     />
                 </div>
-                <span className='seperator text-slate-300 text-md'>|</span>
+                <span className='hidden xl:block seperator text-slate-300 text-md'>|</span>
                 {/* date  bar */}
-                <div className='flex justify-center gap-x-3 flex-1' onClick={() => setOpenDate(!openDate)}>
+                <div className='hidden xl:flex justify-center gap-x-3 flex-1' onClick={() => setOpenDate(!openDate)}>
                     <CalendarDaysIcon className='w-6 h-6 text-blue-600' />
                     <div className='clalender-date text-md'>{`${format(date[0].startDate, 'MM/dd/yyyy')} to ${format(date[0].endDate, 'MM/dd/yyyy')}`}</div>
                     {
@@ -68,9 +69,9 @@ const Header = () => {
                         />
                     }
                 </div>
-                <span className='seperator text-slate-300 text-md'>|</span>
+                <span className='hidden xl:block seperator text-slate-300 text-md'>|</span>
                 {/* quest options */}
-                <div className='options relative flex-1 flex justify-center' onClick={() => setOpenOptions(!openOptions)}>
+                <div className='hidden options relative flex-1 xl:flex justify-center' onClick={() => setOpenOptions(!openOptions)}>
                     <div>{options.adult} adult & {options.children} children &bull; {options.room} room</div>
                     {
                         openOptions && <GusetOptions options={options} setOpenOptions={setOpenOptions} />
