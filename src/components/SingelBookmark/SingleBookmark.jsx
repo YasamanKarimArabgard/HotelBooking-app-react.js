@@ -7,10 +7,10 @@ import ReactCountryFlag from "react-country-flag";
 
 const SingleBookmark = () => {
 
-    const {singleBookmark, loadingSingleBookmark, getSingleBookmark} = useBookmarks();
+    const { singleBookmark, loadingSingleBookmark, getSingleBookmark } = useBookmarks();
     const { id } = useParams();
 
-    if (loadingSingleBookmark|| !singleBookmark) return <Loader />
+    if (loadingSingleBookmark || !singleBookmark) return <Loader />
 
     useEffect(() => {
         getSingleBookmark(id)
@@ -22,7 +22,7 @@ const SingleBookmark = () => {
                 <div className="flex gap-x-2">
                     <h2 className="font-bold text-lg">{singleBookmark.cityName}</h2>
                     <span>
-                        <ReactCountryFlag className="text-xl"svg countryCode={singleBookmark.countryCode}></ReactCountryFlag>
+                        <ReactCountryFlag className="text-xl" svg countryCode={singleBookmark.countryCode}></ReactCountryFlag>
                     </span>
                 </div>
                 <div className="text-slate-500 text-sm">{singleBookmark.country}  &bull; {singleBookmark.host_location}</div>

@@ -23,12 +23,12 @@ const HotelsProvider = ({ children }) => {
         setLoadingCurrHotel(true);
         try {
             const { data } = await axios.get(`${Base_Url}/${id}`)
-            console.log(data);
-            setCurrHotel(data)
-            setLoadingCurrHotel(false)
+            // console.log(data);
+            setCurrHotel(data);
+            setLoadingCurrHotel(false);
         }
         catch (error) {
-            console.log(error);
+            // console.log(error);
             setLoadingCurrHotel(false)
         }
     }

@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useHotels } from "../Context/HotelsProvider";
 import { useEffect } from "react";
 import Loader from '../Loader/Loader';

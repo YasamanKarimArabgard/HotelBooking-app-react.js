@@ -1,4 +1,4 @@
-import { CalendarDaysIcon, MagnifyingGlassIcon, MapPinIcon, MinusCircleIcon, PlusCircleIcon } from '@heroicons/react/24/solid'
+import { CalendarDaysIcon, MagnifyingGlassIcon, MapPinIcon, MinusCircleIcon, PlusCircleIcon } from '@heroicons/react/24/solid';
 import { useRef, useState } from 'react';
 import useClickOutside from '../../hooks/useClickOutside';
 import { DateRange } from 'react-date-range';

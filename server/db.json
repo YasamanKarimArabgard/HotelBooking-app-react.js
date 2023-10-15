@@ -1368,6 +1368,159 @@
       "longitude": "67.78003711374224",
       "host_location": "Baba Kot Pakistan",
       "id": 8
+    },
+    {
+      "cityName": "Larouillies",
+      "countryName": "France",
+      "countryCode": "FR",
+      "latitude": "50.04774450453526",
+      "longitude": "3.9028890450742635",
+      "host_location": "Larouillies+FR",
+      "id": 9
+    },
+    {
+      "cityName": "Boulogne-sur-Helpe",
+      "countryName": "France",
+      "countryCode": "FR",
+      "latitude": "50.061287858360124",
+      "longitude": "3.8963730255098254",
+      "host_location": "Boulogne-sur-Helpe+FR",
+      "id": 10
+    },
+    {
+      "cityName": "Boulogne-sur-Helpe",
+      "countryName": "France",
+      "countryCode": "FR",
+      "latitude": "50.061287858360124",
+      "longitude": "3.8963730255098254",
+      "host_location": "Boulogne-sur-Helpe+FR",
+      "id": 11
+    },
+    {
+      "cityName": "Boulogne-sur-Helpe",
+      "countryName": "France",
+      "countryCode": "FR",
+      "latitude": "50.061287858360124",
+      "longitude": "3.8963730255098254",
+      "host_location": "Boulogne-sur-Helpe+FR",
+      "id": 12
+    },
+    {
+      "cityName": "Larouillies",
+      "countryName": "France",
+      "countryCode": "FR",
+      "latitude": "50.05004801109927",
+      "longitude": "3.91234739508203",
+      "host_location": "Larouillies+FR",
+      "id": 13
+    },
+    {
+      "cityName": "Larouillies",
+      "countryName": "France",
+      "countryCode": "FR",
+      "latitude": "50.05004801109927",
+      "longitude": "3.91234739508203",
+      "host_location": "Larouillies+FR",
+      "id": 14
+    },
+    {
+      "cityName": "Larouillies",
+      "countryName": "France",
+      "countryCode": "FR",
+      "latitude": "50.05004801109927",
+      "longitude": "3.91234739508203",
+      "host_location": "Larouillies+FR",
+      "id": 15
+    },
+    {
+      "cityName": "Larouillies",
+      "countryName": "France",
+      "countryCode": "FR",
+      "latitude": "50.05004801109927",
+      "longitude": "3.91234739508203",
+      "host_location": "Larouillies+FR",
+      "id": 16
+    },
+    {
+      "cityName": "Aulnoye-Aymeries",
+      "countryName": "France",
+      "countryCode": "FR",
+      "latitude": "50.20018461927336",
+      "longitude": "3.8307924569368628",
+      "host_location": "Aulnoye-Aymeries+FR",
+      "id": 17
+    },
+    {
+      "cityName": "Namur",
+      "countryName": "Belgium",
+      "countryCode": "BE",
+      "latitude": "50.46582181741009",
+      "longitude": "4.865029202399636",
+      "host_location": "Namur+BE",
+      "id": 18
+    },
+    {
+      "cityName": "Namur",
+      "countryName": "Belgium",
+      "countryCode": "BE",
+      "latitude": "50.46582181741009",
+      "longitude": "4.865029202399636",
+      "host_location": "Namur+BE",
+      "id": 19
+    },
+    {
+      "cityName": "Namur",
+      "countryName": "Belgium",
+      "countryCode": "BE",
+      "latitude": "50.46582181741009",
+      "longitude": "4.865029202399636",
+      "host_location": "Namur+BE",
+      "id": 20
+    },
+    {
+      "cityName": "Maubeuge",
+      "countryName": "France",
+      "countryCode": "FR",
+      "latitude": "50.280376188132415",
+      "longitude": "3.967809407202672",
+      "host_location": "Maubeuge+FR",
+      "id": 21
+    },
+    {
+      "cityName": "Foret communale de Hirson",
+      "countryName": "France",
+      "countryCode": "FR",
+      "latitude": "50.002067498432815",
+      "longitude": "4.061867429865483",
+      "host_location": "Foret communale de Hirson+FR",
+      "id": 22
+    },
+    {
+      "cityName": "Foret communale de Hirson",
+      "countryName": "France",
+      "countryCode": "FR",
+      "latitude": "50.002067498432815",
+      "longitude": "4.061867429865483",
+      "host_location": "Foret communale de Hirson+FR",
+      "id": 23
+    },
+    {
+      "cityName": "Foret communale de Hirson",
+      "countryName": "France",
+      "countryCode": "FR",
+      "latitude": "50.002067498432815",
+      "longitude": "4.061867429865483",
+      "host_location": "Foret communale de Hirson+FR",
+      "id": 24
+    },
+    {
+      "cityName": "Foret communale de Hirson",
+      "countryName": "France",
+      "countryCode": "FR",
+      "latitude": "50.002067498432815",
+      "longitude": "4.061867429865483",
+      "host_location": "Foret communale de Hirson+FR",
+      "id": 25
     }
   ]
 }
