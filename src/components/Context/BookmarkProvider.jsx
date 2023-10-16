@@ -5,7 +5,7 @@ import {
     useReducer,
 } from "react";
 import axios from "axios";
-import { toast } from "react-hot-toast";
+// import { toast } from "react-hot-toast";
 
 const BookmarksContext = createContext();
 const BASE_URL = "http://localhost:5000";
@@ -76,7 +76,7 @@ function BookmarkProvider({ children }) {
                 const { data } = await axios.get(`${BASE_URL}/bookmarks`);
                 dispatch({ type: "bookmarks/loaded", payload: data });
             } catch (error) {
-                toast.error(error.message);
+                // toast.error(error.message);
                 dispatch({
                     type: "rejected",
                     payload: "an Errror occurred in loading bookmarks",
@@ -94,7 +94,7 @@ function BookmarkProvider({ children }) {
             const { data } = await axios.get(`${BASE_URL}/bookmarks/${id}`);
             dispatch({ type: "bookmark/loaded", payload: data });
         } catch (error) {
-            toast.error(error.message);
+            // toast.error(error.message);
             dispatch({
                 type: "rejected",
                 payload: "an Error occurred in fetching single bookmark",
@@ -108,7 +108,7 @@ function BookmarkProvider({ children }) {
             const { data } = await axios.post(`${BASE_URL}/bookmarks/`, newBookmark);
             dispatch({ type: "bookmark/created", payload: data });
         } catch (error) {
-            toast.error(error.message);
+            // toast.error(error.message);
             dispatch({ type: "rejected", payload: error.message });
         }
     }
@@ -119,7 +119,7 @@ function BookmarkProvider({ children }) {
             await axios.delete(`${BASE_URL}/bookmarks/${id}`);
             dispatch({ type: "bookmark/deleted", payload: id });
         } catch (error) {
-            toast.error(error.message);
+            // toast.error(error.message);
             dispatch({ type: "rejected", payload: error.message });
         }
     }
