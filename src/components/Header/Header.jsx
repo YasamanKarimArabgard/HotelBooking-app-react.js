@@ -1,9 +1,10 @@
-import { CalendarDaysIcon, MagnifyingGlassIcon, MapPinIcon, MinusCircleIcon, PlusCircleIcon , Bars3Icon} from '@heroicons/react/24/solid';
+import { CalendarDaysIcon, MagnifyingGlassIcon, MapPinIcon, MinusCircleIcon, PlusCircleIcon, ArrowLeftOnRectangleIcon } from '@heroicons/react/24/solid';
 import { useRef, useState } from 'react';
 import useClickOutside from '../../hooks/useClickOutside';
 import { DateRange } from 'react-date-range';
 import format from 'date-fns/format';
-import { createSearchParams, useNavigate, useSearchParams } from 'react-router-dom';
+import { createSearchParams, useNavigate, useSearchParams, NavLink } from 'react-router-dom';
+import { useAuth } from '../Context/AuthProvider';
 
 const Header = () => {
 
@@ -39,8 +40,7 @@ const Header = () => {
 
     return (
         <header className="header_container col-span-10 col-start-2 row-start-1">
-            <nav className='nav h-12 bg-white border border-md rounded-xl m-auto flex justify-between items-center px-2 mt-2'>
-                <Bars3Icon className='w-8 h-8 text-slate-600 cursor-pointer xl:hidden' />
+            <nav className='nav h-12 bg-white border border-md rounded-xl m-auto flex flex-row-reverse xl:flex-row justify-between items-center px-2 mt-2 gap-x-3'>
                 {/* search bar */}
                 <div className="serach-lication hidden xl:flex justify-around flex-1">
                     <MapPinIcon className='w-6 h-6 text-orange-500' />
@@ -80,6 +80,9 @@ const Header = () => {
                 <div className='w-7 h-7 bg-blue-600 rounded-lg flex justify-center items-center cursor-pointer'>
                     <MagnifyingGlassIcon className='w-5 h-5 text-white' onClick={() => handleSearach()} />
                 </div>
+                <h1 className='font-bold text-sm text-orange-400 xl:hidden'>Hotel Booking App</h1>
+                <span className='hidden xl:block seperator text-slate-300 text-md'>|</span>
+                <User />
             </nav>
         </header>
     );
@@ -126,5 +129,27 @@ function GuestItem({ optionKey, optionValue }) {
         </div>
     )
 }
+
+function User() {
+    const navigate = useNavigate();
+    const { isAuthenticated, logout } = useAuth();
+    const handleLogout = () => {
+        logout();
+        navigate("/");
+    };
+
+    return (
+        <div>
+            {isAuthenticated ? (
+                <div className='flex items-center justify-center'>
+                    &nbsp; <ArrowLeftOnRectangleIcon onClick={handleLogout} className="logout w-6 h-7 text-red-500">logout</ArrowLeftOnRectangleIcon>
+                </div>
+            ) : (
+                <NavLink to="/login" className='text-orange-500'>Login</NavLink>
+            )}
+        </div>
+    );
+}
+
 
 
