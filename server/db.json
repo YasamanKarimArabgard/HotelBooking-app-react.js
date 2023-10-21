@@ -1379,33 +1379,6 @@
       "id": 9
     },
     {
-      "cityName": "Boulogne-sur-Helpe",
-      "countryName": "France",
-      "countryCode": "FR",
-      "latitude": "50.061287858360124",
-      "longitude": "3.8963730255098254",
-      "host_location": "Boulogne-sur-Helpe+FR",
-      "id": 10
-    },
-    {
-      "cityName": "Boulogne-sur-Helpe",
-      "countryName": "France",
-      "countryCode": "FR",
-      "latitude": "50.061287858360124",
-      "longitude": "3.8963730255098254",
-      "host_location": "Boulogne-sur-Helpe+FR",
-      "id": 11
-    },
-    {
-      "cityName": "Boulogne-sur-Helpe",
-      "countryName": "France",
-      "countryCode": "FR",
-      "latitude": "50.061287858360124",
-      "longitude": "3.8963730255098254",
-      "host_location": "Boulogne-sur-Helpe+FR",
-      "id": 12
-    },
-    {
       "cityName": "Larouillies",
       "countryName": "France",
       "countryCode": "FR",
@@ -1521,6 +1494,96 @@
       "longitude": "4.061867429865483",
       "host_location": "Foret communale de Hirson+FR",
       "id": 25
+    },
+    {
+      "cityName": "Grand-Fayt",
+      "countryName": "France",
+      "countryCode": "FR",
+      "latitude": "50.11904603737954",
+      "longitude": "3.771083741632833",
+      "host_location": "Grand-Fayt+FR",
+      "id": 26
+    },
+    {
+      "cityName": "Jolimetz",
+      "countryName": "France",
+      "countryCode": "FR",
+      "latitude": "50.21886418345637",
+      "longitude": "3.67787731896958",
+      "host_location": "Jolimetz+FR",
+      "id": 27
+    },
+    {
+      "cityName": "Wignehies",
+      "countryName": "France",
+      "countryCode": "FR",
+      "latitude": "50.00184198291594",
+      "longitude": "3.9930629111656972",
+      "host_location": "Wignehies+FR",
+      "id": 28
+    },
+    {
+      "cityName": "Rocquigny",
+      "countryName": "France",
+      "countryCode": "FR",
+      "latitude": "50.0051538387061",
+      "longitude": "3.9768960159704485",
+      "host_location": "Rocquigny+FR",
+      "id": 29
+    },
+    {
+      "cityName": "Rocquigny",
+      "countryName": "France",
+      "countryCode": "FR",
+      "latitude": "49.99731527936342",
+      "longitude": "3.9874031138526793",
+      "host_location": "Rocquigny+FR",
+      "id": 30
+    },
+    {
+      "cityName": "Rocquigny",
+      "countryName": "France",
+      "countryCode": "FR",
+      "latitude": "49.99401198834561",
+      "longitude": "3.96270993266843",
+      "host_location": "Rocquigny+FR",
+      "id": 31
+    },
+    {
+      "cityName": "La Flamengrie",
+      "countryName": "France",
+      "countryCode": "FR",
+      "latitude": "49.99267772647331",
+      "longitude": "3.9563611479805787",
+      "host_location": "La Flamengrie+FR",
+      "id": 32
+    },
+    {
+      "cityName": "Rocquigny",
+      "countryName": "France",
+      "countryCode": "FR",
+      "latitude": "49.99091092200925",
+      "longitude": "3.9789991723879097",
+      "host_location": "Rocquigny+FR",
+      "id": 33
+    },
+    {
+      "cityName": "Wignehies",
+      "countryName": "France",
+      "countryCode": "FR",
+      "latitude": "49.99378194630118",
+      "longitude": "3.9887751859285556",
+      "host_location": "Wignehies+FR",
+      "id": 34
+    },
+    {
+      "cityName": "Wignehies",
+      "countryName": "France",
+      "countryCode": "FR",
+      "latitude": "49.999302665114065",
+      "longitude": "3.9942634742320986",
+      "host_location": "Wignehies+FR",
+      "id": 35
     }
   ]
 }

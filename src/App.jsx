@@ -9,11 +9,11 @@ import BookmarkLayout from "./components/BookmarkLayout/BookmarkLayout";
 import BookmarkList from "./components/BookmarkList/BookmarkList";
 import BookmarkProvider from "./components/Context/BookmarkProvider";
 import SingleBookmark from "./components/SingelBookmark/SingleBookmark";
-import AddNewBookmark from "./components/addNewBookmark/addNewBookmark";
+import AddNewBookmark from './components/AddNewBookmark/AddNewBookmark'
 import AuthProvier from "./components/Context/AuthProvider";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute"
-import './App.css';
 import Login from "./components/Login/Login";
+import './App.css';
 
 function App() {
   return (

@@ -28,7 +28,7 @@ function bookmarkReducer(state, action) {
             return {
                 ...state,
                 isLoading: false,
-                bookmarks: action.payload,
+                bookmarkList: action.payload,
             };
         case "bookmark/loaded":
             return {
@@ -40,14 +40,14 @@ function bookmarkReducer(state, action) {
             return {
                 ...state,
                 isLoading: false,
-                bookmarks: [...state.bookmarks, action.payload],
+                bookmarkList: [...state.bookmarks, action.payload],
                 singleBookmark: action.payload,
             };
         case "bookmark/deleted":
             return {
                 ...state,
                 isLoading: false,
-                bookmarks: state.bookmarks.filter((item) => item.id !== action.payload),
+                bookmarkList: state.bookmarkList.filter((item) => item.id !== action.payload),
                 singleBookmark: null,
             };
         case "rejected":
@@ -61,7 +61,6 @@ function bookmarkReducer(state, action) {
     }
 }
 
-// 1. pending, 2. success ,3. rejected
 
 function BookmarkProvider({ children }) {
     const [{ bookmarkList, isLoading, singleBookmark }, dispatch] = useReducer(
@@ -103,6 +102,7 @@ function BookmarkProvider({ children }) {
     }
 
     async function createNewBookmark(newBookmark) {
+
         dispatch({ type: "loading" });
         try {
             const { data } = await axios.post(`${BASE_URL}/bookmarks/`, newBookmark);

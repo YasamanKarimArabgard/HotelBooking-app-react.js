@@ -7,14 +7,12 @@ import { TrashIcon } from '@heroicons/react/24/solid';
 const BookmarkList = () => {
 
     const { singleBookmark, isLoading, bookmarkList, deleteBookmark } = useBookmarks();
+
+    console.log(bookmarkList);
     const navigate = useNavigate();
     if (isLoading) return <Loader />
 
     const deleteHandler = async (e, id) => {
-
-        e.preventDefault();
-        e.stopPropagation();
-
         await deleteBookmark(id);
     }
 
