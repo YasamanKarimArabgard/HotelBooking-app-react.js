@@ -14,6 +14,8 @@ import AuthProvier from "./components/Context/AuthProvider";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute"
 import Login from "./components/Login/Login";
 import './App.css';
+import MobileFooter from "./components/MobileFooter/MobileFooter";
+import SearchPage from "./components/Search/SearchPage";
 
 function App() {
   return (
@@ -26,6 +28,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<LocationList />} />
                 <Route path="/login" element={<Login />} />
+                <Route path="/search" element={<SearchPage />} />
                 <Route path="/hotels" element={<AppLayout />} >
                   <Route index element={<Hotels />} />
                   <Route path=":id" element={<SingleHotel />} />
@@ -40,6 +43,7 @@ function App() {
                   <Route path="add" element={<AddNewBookmark />} />
                 </Route>
               </Routes>
+              <MobileFooter />
             </HotelsProvider>
           </BookmarkProvider>
         </AuthProvier>

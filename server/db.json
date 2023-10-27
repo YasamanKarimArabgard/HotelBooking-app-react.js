@@ -1386,6 +1386,24 @@
       "longitude": "48.403032129893106",
       "host_location": "Dezful+IR",
       "id": 29
+    },
+    {
+      "cityName": "Wignehies",
+      "countryName": "France",
+      "countryCode": "FR",
+      "latitude": "50.00218097265081",
+      "longitude": "4.008267980792955",
+      "host_location": "Wignehies+FR",
+      "id": 30
+    },
+    {
+      "cityName": "La Flamengrie",
+      "countryName": "France",
+      "countryCode": "FR",
+      "latitude": "49.994416435026956",
+      "longitude": "3.9621568655244266",
+      "host_location": "La Flamengrie+FR",
+      "id": 31
     }
   ]
 }
