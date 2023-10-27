@@ -8,8 +8,8 @@ const BookmarkLayout = () => {
     
     return (
         <div className="col-span-10 col-start-2 row-start-2 bg-white rounded-xl border">
-            <div className="flex h-full justify-between overflow-hidden flex-wrap">
-                <div className="w-2/6 overflow-y-scroll">
+            <div className="flex flex-col-reverse md:flex-row h-full justify-between overflow-hidden flex-wrap">
+                <div className="h-4/6 md:h-full w-full md:w-2/6 overflow-y-scroll">
                     <Outlet />
                 </div>
                 <Map markerLoactions={bookmarkList} />

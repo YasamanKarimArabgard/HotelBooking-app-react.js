@@ -10,22 +10,24 @@ const Hotels = () => {
 
     return (
         <div className="hotels_container flex flex-col gap-y-2 m-1">
-            <button
-                onClick={() => navigate(-1)}
-                className="p-1 border border-orange-400 text-orange-400 w-20 text-sm rounded-lg"
-            >&larr; Back</button>
-            <h2 className="font-bold text-md">Search Result ({hotels.length})</h2>
+            <div className="flex justify-between items-center w-full">
+                <h2 className="font-bold text-md">Search Result ({hotels.length})</h2>
+                <button
+                    onClick={() => navigate(-1)}
+                    className="p-1 border border-orange-400 text-orange-400 w-20 text-xs md:text-sm rounded-lg"
+                >&larr; Back</button>
+            </div>
             <div>
                 {
                     hotels.map(item => (
                         <Link key={item.id} to={`/hotels/${item.id}?lat=${item.latitude}&lng=${item.longitude}`}>
-                            <div className={`flex gap-x-3 h-fit rounded-xl p-1 hover:bg-orange-50 ${item.id === currHotel?.id ? 'bg-orange-200' : ''}`}>
+                            <div className={`flex gap-x-3 h-fit rounded-xl items-center p-1 hover:bg-orange-50 ${item.id === currHotel?.id ? 'bg-orange-200' : ''}`}>
                                 <div className="w-24">
                                     <img src={item.picture_url.url} className="w-full h-20 rounded-xl" />
                                 </div>
-                                <div className="flex flex-col gap-y-1 m-1">
-                                    <h2 className='font-bold text-sm'>{item.smart_location}</h2>
-                                    <h4 className="text-xs text-slate-400">{item.name}</h4>
+                                <div className="flex-1 flex flex-col gap-y-1 m-1">
+                                    <h2 className='font-bold text-xs md:text-sm'>{item.smart_location}</h2>
+                                    <h4 className="text-xs md:text-xs text-slate-400">{item.name}</h4>
                                     <div className='flex gap-x-1 items-center'>
                                         <h5 className='text-xs'>€ {item.price}</h5>
                                         <span className='text-xs text-slate-500'>night</span>

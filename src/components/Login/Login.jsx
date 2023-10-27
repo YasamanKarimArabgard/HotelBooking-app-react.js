@@ -14,12 +14,12 @@ function Login() {
     };
 
     useEffect(() => {
-        if (isAuthenticated) navigate("/", { replace: true });
+        if (isAuthenticated) navigate("/bookmarks", { replace: true });
     }, [isAuthenticated, navigate]);
 
     return (
         <div className="loginContainer col-span-10  col-start-2 row-start-2 flex justify-center items-center">
-            <div className="w-full xl:w-1/3 bg-white h-fit rounded-xl border border-slate-400 p-4 flex flex-col items-center gap-y-2">
+            <div className="w-full xl:w-1/3 bg-white h-64 rounded-xl border p-4 flex flex-col items-center justify-center gap-y-2">
                 <h2 className="font-bold text-xl">Login</h2>
                 <form onSubmit={handleSubmit} className="form w-full flex flex-col gap-y-2">
                     <div className="formControl flex flex-col gap-y-2">
@@ -45,7 +45,7 @@ function Login() {
                         />
                     </div>
                     <div className="buttons mx-auto w-full">
-                        <button className="w-full p-1  rounded-xl bg-blue-400 hover:bg-blue-500 hover:ease-in-out duration-100 text-slate-50 ">Login</button>
+                        <button className="w-full p-1  rounded-xl bg-blue-400 active:hover:bg-blue-500 hover:bg-blue-500 hover:ease-in-out duration-100 text-slate-50 ">Login</button>
                     </div>
                 </form>
             </div>

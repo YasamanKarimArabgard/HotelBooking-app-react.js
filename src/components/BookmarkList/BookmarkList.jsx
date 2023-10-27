@@ -18,11 +18,18 @@ const BookmarkList = () => {
 
     return (
         <div className="bookmarklist m-1 flex flex-col gap-y-2">
-            <button
-                onClick={() => navigate(-1)}
-                className="p-1 border border-orange-400 text-orange-400 w-20 text-sm rounded-lg"
-            >&larr; Back</button>
-            <h2 className="font-bold text-md ml-1">Bookmarks ({bookmarkList.length})</h2>
+            <div className="flex justify-between items-center w-full">
+                <div className="flex justify-between items-center gap-x-1">
+                    <h2 className="font-bold text-md ml-1">Bookmarks ({bookmarkList.length})</h2>
+                    <button 
+                    onClick={()=>navigate('/bookmarks/add')}
+                    className="w-fit h-6 rounded-md bg-orange-400 text-xs md:text-sm text-white px-1">+ add</button>
+                </div>
+                <button
+                    onClick={() => navigate(-1)}
+                    className="p-1 border border-orange-400 text-orange-400 w-20 text-sm rounded-lg"
+                >&larr; Back</button>
+            </div>
             <div className="flex flex-col gap-y-3">
                 {
                     bookmarkList.map(bk => (
@@ -43,6 +50,7 @@ const BookmarkList = () => {
                     ))
                 }
             </div>
+            <div className="h-9 w-full bg-white md:hidden"></div>
         </div>
     );
 };

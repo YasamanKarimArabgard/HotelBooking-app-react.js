@@ -26,7 +26,7 @@ const Map = ({ markerLoactions }) => {
     }, [geoCurrentLocation])
 
     return (
-        <div className="w-4/6 rounded-tr-md rounded-br-md flex items-center justify-center">
+        <div className="map w-full h-2/6 md:h-full md:w-4/6 rounded-tr-md rounded-br-md flex items-center justify-center">
             <MapContainer
                 className="map"
                 center={mapPosition}
@@ -34,7 +34,7 @@ const Map = ({ markerLoactions }) => {
                 scrollWheelZoom={true}>
                 <button
                     onClick={(e) => getPosition(e)}
-                    className="absolute bottom-5 left-5 bg-orange-500 z-[1000] p-1 px-2 rounded-md text-white font-bold shadow-xl">{isLoactionloading ? 'Loading...' : 'Your current position'}</button>
+                    className="absolute bottom-5 left-5 bg-orange-500 z-[1000] text-xs p-1 px-2 rounded-md text-white font-bold shadow-xl">{isLoactionloading ? 'Loading...' : 'Your current position'}</button>
                 <TileLayer
                     attribution='&copy;<a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"

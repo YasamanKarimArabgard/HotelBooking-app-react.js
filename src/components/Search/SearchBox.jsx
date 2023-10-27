@@ -4,7 +4,7 @@ import { DateRange } from 'react-date-range';
 import { useRef, useState } from 'react';
 import { createSearchParams, useNavigate, useSearchParams } from 'react-router-dom';
 
-const SearchPage = () => {
+const SearchBox = () => {
 
     const [searchParams, setSearchParams] = useSearchParams();
     const navigate = useNavigate();
@@ -47,27 +47,27 @@ const SearchPage = () => {
       };
 
     return (
-        <div className='search-modal hidden md:block ease-in h-fit bg-white rounded-xl border p-1'>
+        <div className='search-box ease-in h-fit bg-white rounded-xl border p-1'>
             <h2 className='font-bold lg:text-lg p-2'>Search Box</h2>
             <form className='w-full flex flex-col gap-y-5 p-1' onSubmit={handleSearach}>
                 <div className="serach-lication flex justify-between gap-x-2">
                     <MapPinIcon className='w-6 h-6 text-orange-500' />
                     <input
                         value={destination}
-                        className='w-50 text-md h-auto p-1 rounded-md border border-orange-300 focus:outline-none focus:border-2 focus:border-orange-400'
+                        className='w-52 text-md h-auto p-1 rounded-md border border-orange-300 focus:outline-none focus:border-2 focus:border-orange-400'
                         placeholder='Where to go ?'
                         id='destination'
                         name='destination'
                         onChange={(e) => setDestination(e.target.value)}
                     />
                 </div>
-                {/* date  bar */}
-                <div className='flex flex-col items-center'>
-                    <div className='w-50 flex gap-x-6 items-center justify-between'>
+                {/* date bar */}
+                <div className='flex flex-col items-center w-full'>
+                    <div className='w-full flex items-center justify-between'>
                         <CalendarDaysIcon className='w-6 h-6 text-blue-600' />
                         <div
                             onClick={() => setOpenDate(!openDate)}
-                            className='clalender-date text-md border border-blue-500 cursor-pointer p-1 rounded-md '>{`${format(date[0].startDate, 'MM/dd/yyyy')} to ${format(date[0].endDate, 'MM/dd/yyyy')}`}</div>
+                            className='clalender-date w-52 text-md border border-blue-500 cursor-pointer p-1 rounded-md '>{`${format(date[0].startDate, 'MM/dd/yyyy')} to ${format(date[0].endDate, 'MM/dd/yyyy')}`}</div>
                     </div>
                     {
                         openDate &&
@@ -82,7 +82,7 @@ const SearchPage = () => {
                 </div>
                 {/* quest options */}
                 <div className='options flex flex-col items-center gap-y-2'>
-                    <div className='flex items-center gap-x-2'>
+                    <div className='w-full flex items-center gap-x-2 justify-between'>
                         <UserGroupIcon className='w-6 h-6 text-blue-400' />
                         <div>{options.adult} adult & {options.children} children &bull; {options.room} room</div>
                     </div>
@@ -98,12 +98,11 @@ const SearchPage = () => {
     );
 };
 
-export default SearchPage;
+export default SearchBox;
 
 function GusetOptions({ options, handleOptions }) {
     return (
         <div
-
             className='guest-options w-full max-w-auto bg-white p-1 px-2 flex flex-col gap-y-2 border rounded-md'>
             <GuestItem
                 handleOptions={handleOptions}

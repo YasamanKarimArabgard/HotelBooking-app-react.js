@@ -1,6 +1,6 @@
 import useFetch from '../../hooks/useFetch';
 import Loader from '../Loader/Loader';
-import SearchPage from '../SearchPage/SearchPage';
+import SearchPage from '../Search/SearchBox';
 
 const LocationList = () => {
 
