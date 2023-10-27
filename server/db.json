@@ -1343,69 +1343,6 @@
       "id": 4
     },
     {
-      "cityName": "Sanandaj",
-      "country": "Iran (Islamic Republic of)",
-      "countryCode": "IR",
-      "latitude": "35.31372444726279",
-      "longitude": "47.03114358752335",
-      "host_location": "Sanandaj Iran (Islamic Republic of)",
-      "id": 5
-    },
-    {
-      "cityName": "A Dakhla Oasis",
-      "country": "Egypt",
-      "countryCode": "EG",
-      "latitude": "25.02090651422749",
-      "longitude": "29.09059588509316",
-      "host_location": "A Dakhla Oasis Egypt",
-      "id": 7
-    },
-    {
-      "cityName": "Baba Kot",
-      "country": "Pakistan",
-      "countryCode": "PK",
-      "latitude": "28.43528783183169",
-      "longitude": "67.78003711374224",
-      "host_location": "Baba Kot Pakistan",
-      "id": 8
-    },
-    {
-      "cityName": "Larouillies",
-      "countryName": "France",
-      "countryCode": "FR",
-      "latitude": "50.04774450453526",
-      "longitude": "3.9028890450742635",
-      "host_location": "Larouillies+FR",
-      "id": 9
-    },
-    {
-      "cityName": "Larouillies",
-      "countryName": "France",
-      "countryCode": "FR",
-      "latitude": "50.05004801109927",
-      "longitude": "3.91234739508203",
-      "host_location": "Larouillies+FR",
-      "id": 13
-    },
-    {
-      "cityName": "Larouillies",
-      "countryName": "France",
-      "countryCode": "FR",
-      "latitude": "50.05004801109927",
-      "longitude": "3.91234739508203",
-      "host_location": "Larouillies+FR",
-      "id": 14
-    },
-    {
-      "cityName": "Larouillies",
-      "countryName": "France",
-      "countryCode": "FR",
-      "latitude": "50.05004801109927",
-      "longitude": "3.91234739508203",
-      "host_location": "Larouillies+FR",
-      "id": 15
-    },
-    {
       "cityName": "Larouillies",
       "countryName": "France",
       "countryCode": "FR",
@@ -1413,87 +1350,6 @@
       "longitude": "3.91234739508203",
       "host_location": "Larouillies+FR",
       "id": 16
-    },
-    {
-      "cityName": "Aulnoye-Aymeries",
-      "countryName": "France",
-      "countryCode": "FR",
-      "latitude": "50.20018461927336",
-      "longitude": "3.8307924569368628",
-      "host_location": "Aulnoye-Aymeries+FR",
-      "id": 17
-    },
-    {
-      "cityName": "Namur",
-      "countryName": "Belgium",
-      "countryCode": "BE",
-      "latitude": "50.46582181741009",
-      "longitude": "4.865029202399636",
-      "host_location": "Namur+BE",
-      "id": 18
-    },
-    {
-      "cityName": "Namur",
-      "countryName": "Belgium",
-      "countryCode": "BE",
-      "latitude": "50.46582181741009",
-      "longitude": "4.865029202399636",
-      "host_location": "Namur+BE",
-      "id": 19
-    },
-    {
-      "cityName": "Namur",
-      "countryName": "Belgium",
-      "countryCode": "BE",
-      "latitude": "50.46582181741009",
-      "longitude": "4.865029202399636",
-      "host_location": "Namur+BE",
-      "id": 20
-    },
-    {
-      "cityName": "Maubeuge",
-      "countryName": "France",
-      "countryCode": "FR",
-      "latitude": "50.280376188132415",
-      "longitude": "3.967809407202672",
-      "host_location": "Maubeuge+FR",
-      "id": 21
-    },
-    {
-      "cityName": "Foret communale de Hirson",
-      "countryName": "France",
-      "countryCode": "FR",
-      "latitude": "50.002067498432815",
-      "longitude": "4.061867429865483",
-      "host_location": "Foret communale de Hirson+FR",
-      "id": 22
-    },
-    {
-      "cityName": "Foret communale de Hirson",
-      "countryName": "France",
-      "countryCode": "FR",
-      "latitude": "50.002067498432815",
-      "longitude": "4.061867429865483",
-      "host_location": "Foret communale de Hirson+FR",
-      "id": 23
-    },
-    {
-      "cityName": "Foret communale de Hirson",
-      "countryName": "France",
-      "countryCode": "FR",
-      "latitude": "50.002067498432815",
-      "longitude": "4.061867429865483",
-      "host_location": "Foret communale de Hirson+FR",
-      "id": 24
-    },
-    {
-      "cityName": "Foret communale de Hirson",
-      "countryName": "France",
-      "countryCode": "FR",
-      "latitude": "50.002067498432815",
-      "longitude": "4.061867429865483",
-      "host_location": "Foret communale de Hirson+FR",
-      "id": 25
     },
     {
       "cityName": "Grand-Fayt",
@@ -1523,67 +1379,13 @@
       "id": 28
     },
     {
-      "cityName": "Rocquigny",
-      "countryName": "France",
-      "countryCode": "FR",
-      "latitude": "50.0051538387061",
-      "longitude": "3.9768960159704485",
-      "host_location": "Rocquigny+FR",
+      "cityName": "Dezful",
+      "countryName": "Iran (Islamic Republic of)",
+      "countryCode": "IR",
+      "latitude": "32.377684683969655",
+      "longitude": "48.403032129893106",
+      "host_location": "Dezful+IR",
       "id": 29
-    },
-    {
-      "cityName": "Rocquigny",
-      "countryName": "France",
-      "countryCode": "FR",
-      "latitude": "49.99731527936342",
-      "longitude": "3.9874031138526793",
-      "host_location": "Rocquigny+FR",
-      "id": 30
-    },
-    {
-      "cityName": "Rocquigny",
-      "countryName": "France",
-      "countryCode": "FR",
-      "latitude": "49.99401198834561",
-      "longitude": "3.96270993266843",
-      "host_location": "Rocquigny+FR",
-      "id": 31
-    },
-    {
-      "cityName": "La Flamengrie",
-      "countryName": "France",
-      "countryCode": "FR",
-      "latitude": "49.99267772647331",
-      "longitude": "3.9563611479805787",
-      "host_location": "La Flamengrie+FR",
-      "id": 32
-    },
-    {
-      "cityName": "Rocquigny",
-      "countryName": "France",
-      "countryCode": "FR",
-      "latitude": "49.99091092200925",
-      "longitude": "3.9789991723879097",
-      "host_location": "Rocquigny+FR",
-      "id": 33
-    },
-    {
-      "cityName": "Wignehies",
-      "countryName": "France",
-      "countryCode": "FR",
-      "latitude": "49.99378194630118",
-      "longitude": "3.9887751859285556",
-      "host_location": "Wignehies+FR",
-      "id": 34
-    },
-    {
-      "cityName": "Wignehies",
-      "countryName": "France",
-      "countryCode": "FR",
-      "latitude": "49.999302665114065",
-      "longitude": "3.9942634742320986",
-      "host_location": "Wignehies+FR",
-      "id": 35
     }
   ]
 }

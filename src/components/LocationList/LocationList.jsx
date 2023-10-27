@@ -8,7 +8,7 @@ const LocationList = () => {
 
     return (
         <div className='locationList-container flex row-start-2 col-start-2 col-span-10 flex-row-reverse gap-x-3 bg-white rounded-xl border p-2 gap-y-3'>
-            <div className='w-3/4 overflow-hidden overflow-y-scroll'>
+            <div className='w-full md:w-3/4 overflow-hidden overflow-y-scroll'>
                 {
                     loading ? <Loader /> :
                         <div className='locationList grid md:grid-cols-3 gap-y-2 gap-x-3 mr-1'>
@@ -31,7 +31,7 @@ const LocationList = () => {
                         </div>
                 }
             </div>
-            <div className='searchPage w-1/4'>
+            <div className='searchPage hidden md:block md:w-1/4'>
                 <SearchPage />
             </div>
         </div>

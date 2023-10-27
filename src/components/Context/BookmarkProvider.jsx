@@ -40,7 +40,7 @@ function bookmarkReducer(state, action) {
             return {
                 ...state,
                 isLoading: false,
-                bookmarkList: [...state.bookmarks, action.payload],
+                bookmarkList: [...state.bookmarkList, action.payload],
                 singleBookmark: action.payload,
             };
         case "bookmark/deleted":
@@ -85,7 +85,7 @@ function BookmarkProvider({ children }) {
         fetchBookmarkList();
     }, []);
 
-    async function getBookmark(id) {
+    async function getSingleBookmark(id) {
         if (Number(id) === singleBookmark?.id) return;
 
         dispatch({ type: "loading" });
@@ -130,7 +130,7 @@ function BookmarkProvider({ children }) {
                 isLoading,
                 bookmarkList,
                 singleBookmark,
-                getBookmark,
+                getSingleBookmark,
                 createNewBookmark,
                 deleteBookmark,
             }}
