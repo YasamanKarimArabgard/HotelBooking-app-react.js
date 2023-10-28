@@ -13,11 +13,12 @@ const HotelsProvider = ({ children }) => {
     const destination = searchParams.get('destination');
     const room = JSON.parse(searchParams.get('options'))?.room;
 
-    const Base_Url = 'http://localhost:5000/hotels';
+    const Base_Url = 'https://hotelbooking-api-one.vercel.app/hotels';
 
     const { loading, data: hotels } = useFetch(`${Base_Url}`,
         `name_like=${destination || ""}&accommodates_gte=${room || 1}`);
 
+        // console.log(hotels);
 
     async function getSingleHotel(id) {
         setLoadingCurrHotel(true);

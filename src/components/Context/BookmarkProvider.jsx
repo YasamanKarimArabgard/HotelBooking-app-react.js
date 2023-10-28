@@ -8,7 +8,7 @@ import axios from "axios";
 // import { toast } from "react-hot-toast";
 
 const BookmarksContext = createContext();
-const BASE_URL = "http://localhost:5000";
+const BASE_URL = "https://hotelbooking-api-one.vercel.app";
 
 const initialState = {
     bookmarkList: [],
@@ -91,6 +91,7 @@ function BookmarkProvider({ children }) {
         dispatch({ type: "loading" });
         try {
             const { data } = await axios.get(`${BASE_URL}/bookmarks/${id}`);
+            // console.log(data);
             dispatch({ type: "bookmark/loaded", payload: data });
         } catch (error) {
             // toast.error(error.message);
@@ -107,6 +108,7 @@ function BookmarkProvider({ children }) {
         try {
             const { data } = await axios.post(`${BASE_URL}/bookmarks/`, newBookmark);
             dispatch({ type: "bookmark/created", payload: data });
+            console.log('added');
         } catch (error) {
             // toast.error(error.message);
             dispatch({ type: "rejected", payload: error.message });
@@ -115,13 +117,13 @@ function BookmarkProvider({ children }) {
 
     async function deleteBookmark(id) {
         dispatch({ type: "loading" });
-        try {
-            await axios.delete(`${BASE_URL}/bookmarks/${id}`);
+        // try {
+        //     await axios.delete(`${BASE_URL}/bookmarks/${id}`);
             dispatch({ type: "bookmark/deleted", payload: id });
-        } catch (error) {
+        // } catch (error) {
             // toast.error(error.message);
-            dispatch({ type: "rejected", payload: error.message });
-        }
+        //     dispatch({ type: "rejected", payload: error.message });
+        // }
     }
 
     return (
