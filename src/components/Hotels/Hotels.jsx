@@ -9,12 +9,12 @@ const Hotels = () => {
     if (loading) return <Loader />
 
     return (
-        <div className="hotels_container flex flex-col gap-y-2 m-1">
+        <div className="hotels flex flex-col gap-y-2 m-1">
             <div className="flex justify-between items-center w-full">
-                <h2 className="font-bold text-md">Search Result ({hotels.length})</h2>
+                <h2 className="hotel-result font-bold text-md">Search Result ({hotels.length})</h2>
                 <button
                     onClick={() => navigate(-1)}
-                    className="p-1 border border-orange-400 text-orange-400 w-20 text-xs md:text-sm rounded-lg"
+                    className="back-button p-1 border border-orange-400 text-orange-400 w-20 text-xs md:text-sm rounded-lg"
                 >&larr; Back</button>
             </div>
             <div>

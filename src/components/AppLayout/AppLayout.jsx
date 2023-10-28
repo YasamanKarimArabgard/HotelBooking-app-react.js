@@ -8,7 +8,7 @@ const AppLayout = () => {
     return (
         <div className="appLayout row-start-2 col-start-2 col-span-10 border bg-white rounded-xl p-2">
             <div className="location-list flex flex-col-reverse md:flex-row h-full justify-between overflow-hidden flex-wrap">
-                <div className="w-full h-4/6 md:h-full md:w-2/6 overflow-y-scroll">
+                <div className="hotels-container w-full h-4/6 md:h-full md:w-2/6 overflow-y-scroll">
                     <Outlet />
                 </div>
                 <Map markerLoactions={hotels} />
