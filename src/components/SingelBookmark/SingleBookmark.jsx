@@ -3,7 +3,7 @@ import { useBookmarks } from "../Context/BookmarkProvider";
 import { useParams } from "react-router-dom";
 import Loader from "../Loader/Loader";
 import ReactCountryFlag from "react-country-flag";
-
+import BackButton from '../../common/BackButton'
 
 const SingleBookmark = () => {
 
@@ -17,7 +17,8 @@ const SingleBookmark = () => {
     }, [id])
 
     return (
-        <div className="bookmark m-2">
+        <div className="bookmark m-2 flex flex-col gap-y-2">
+            <BackButton />
             <div className='bookmarkDetail flex flex-col gap-y-2 bg-slate-50 border border-orange-300 rounded-md p-2'>
                 <div className="flex gap-x-2">
                     <h2 className="font-bold text-lg">{singleBookmark.cityName}</h2>
