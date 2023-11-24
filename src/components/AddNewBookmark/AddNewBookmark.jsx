@@ -5,6 +5,7 @@ import axios from "axios";
 import Loader from "../Loader/Loader";
 import ReactCountryFlag from "react-country-flag";
 import { useBookmarks } from "../Context/BookmarkProvider";
+import BackButton from '../../common/BackButton'
 
 const AddNewBookmark = () => {
 
@@ -67,9 +68,10 @@ const AddNewBookmark = () => {
 
     return (
         <div className="w-full flex flex-col gap-y-2 p-2 px-3">
+            <BackButton/>
             <h2 className="font-bold text-lg">Book New Location</h2>
-            <form className='w-full flex flex-col gap-y-2' onSubmit={handleSubmit}>
-                <div className="flex flex-col gap-y-1">
+            <form className='w-full flex flex-col gap-y-3' onSubmit={handleSubmit}>
+                <div className="flex flex-col gap-y-2">
                     <label htmlFor="cityName">City name :</label>
                     <div className="">
                         <input
@@ -83,7 +85,7 @@ const AddNewBookmark = () => {
                         ></input>
                     </div>
                 </div>
-                <div className="flex flex-col gap-y-1">
+                <div className="flex flex-col gap-y-2">
                     <label htmlFor="countryName">Country name :</label>
                     <div className="flex justify-between items-center border border-orange-400 rounded-lg overflow-hidden p-1 px-2">
                         <input
@@ -98,13 +100,10 @@ const AddNewBookmark = () => {
                         <ReactCountryFlag className="text-lg" svg countryCode={countryCode}></ReactCountryFlag>
                     </div>
                 </div>
-                <div className="add-form-buttons flex justify-between">
-                    <button
-                        onClick={(e) => backBtn(e)}
-                        className="add-submit-btn p-2 px-3 border border-orange-400 rounded-xl hover:bg-orange-400 hover:text-white duration-100 ease-in text-orange-400">back</button>
+                <div className="add-form-buttons flex justify-center">
                     <button
                         type="submit"
-                        className="add-submit-btn w-1/2 p-2 px-3 bg-blue-400 hover:bg-blue-500 duration-150 ease-in-out rounded-xl text-white">submit</button>
+                        className="add-submit-btn w-full p-2 px-3 bg-blue-400 hover:bg-blue-500 duration-150 ease-in-out rounded-xl text-white">submit</button>
                 </div>
             </form>
         </div>
