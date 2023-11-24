@@ -1,29 +1,26 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useHotels } from "../Context/HotelsProvider";
 import Loader from "../Loader/Loader";
+import BackButton from '../../common/BackButton'
 
 const Hotels = () => {
 
     const { loading, hotels, currHotel } = useHotels();
-    const navigate = useNavigate();
     if (loading) return <Loader />
 
     return (
-        <div className="hotels flex flex-col gap-y-2 m-1">
-            <div className="flex justify-between items-center w-full">
-                <h2 className="hotel-result font-bold text-md">Search Result ({hotels.length})</h2>
-                <button
-                    onClick={() => navigate(-1)}
-                    className="back-button p-1 border border-orange-400 text-orange-400 w-20 text-xs md:text-sm rounded-lg"
-                >&larr; Back</button>
+        <div className="hotels flex flex-col gap-y-3 mt-3 px-1">
+            <div >
+                <BackButton />
+                <h2 className="hotel-result font-bold text-lg">Search Result ({hotels.length})</h2>
             </div>
-            <div>
+            <div className="flex flex-col gap-y-2">
                 {
                     hotels.map(item => (
                         <Link key={item.id} to={`/hotels/${item.id}?lat=${item.latitude}&lng=${item.longitude}`}>
-                            <div className={`flex gap-x-3 h-fit rounded-xl items-center p-1 hover:bg-orange-50 ${item.id === currHotel?.id ? 'bg-orange-200' : ''}`}>
-                                <div className="w-24">
-                                    <img src={item.picture_url.url} className="w-full h-20 rounded-xl" />
+                            <div className={`flex gap-x-3 h-fit rounded-xl items-center bg-gray-100 hover:bg-orange-50 ${item.id === currHotel?.id ? 'bg-orange-200' : ''}`}>
+                                <div className="w-24 md:w-28">
+                                    <img src={item.picture_url.url} className="w-full h-20 md:h-28 rounded-tl-xl rounded-bl-xl" />
                                 </div>
                                 <div className="flex-1 flex flex-col gap-y-1 m-1">
                                     <h2 className='font-bold text-xs md:text-sm'>{item.smart_location}</h2>

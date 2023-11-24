@@ -6,7 +6,7 @@ const LocationList = () => {
 
     const { loading, data, error } = useFetch("https://hotelbooking-api-one.vercel.app/hotels");
 
-    console.log(data);
+    // console.log(data);
 
     if (loading) {
         return <Loader />
