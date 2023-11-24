@@ -18,9 +18,9 @@ function Login() {
     }, [isAuthenticated, navigate]);
 
     return (
-        <div className="loginContainer col-span-10  col-start-2 row-start-2 flex justify-center items-center">
+        <div className="loginContainer col-span-10  col-start-2 row-start-2 flex justify-center md:items-center">
             <div className="w-full xl:w-1/3 bg-white h-64 rounded-xl border p-4 flex flex-col items-center justify-center gap-y-2">
-                <h2 className="font-bold text-xl">Login</h2>
+                <h2 className="font-bold text-2xl">Sign in Your account</h2>
                 <form onSubmit={handleSubmit} className="form w-full flex flex-col gap-y-2">
                     <div className="formControl flex flex-col gap-y-2">
                         <label htmlFor="email">Email :</label>
