@@ -16,7 +16,7 @@ import Login from "./components/Login/Login";
 import './App.css';
 import MobileFooter from "./components/MobileFooter/MobileFooter";
 import SearchPage from "./components/Search/SearchPage";
-import Profile from "./components/Profile/profile";
+import Profile from "./components/Profile/Profile";
 
 function App() {
   return (
