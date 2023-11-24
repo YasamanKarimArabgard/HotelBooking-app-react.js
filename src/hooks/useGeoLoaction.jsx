@@ -15,7 +15,7 @@ const useGeoLoaction = () => {
             return ('your browser doesnt support geolocaltion');
         }
 
-        console.log(position);
+        // console.log(position);
 
         setLoading(true);
         navigator.geolocation.getCurrentPosition(

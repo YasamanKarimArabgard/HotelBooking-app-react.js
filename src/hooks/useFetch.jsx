@@ -6,17 +6,19 @@ const useFetch = (url, query = "") => {
 
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(false);
+
     // console.log(data);
 
     useEffect(() => {
         async function fetchData() {
             setLoading(true)
             try {
-                setLoading(true);
                 const { data } = await axios.get(`${url}?${query}`);
                 setData(data);
             } catch (err) {
                 setData([]);
+                setError(true);
             } finally {
                 setLoading(false);
             }
@@ -25,7 +27,7 @@ const useFetch = (url, query = "") => {
         fetchData();
     }, [url, query])
 
-    return { loading, data }
+    return { loading, data , error}
 };
 
 export default useFetch;
