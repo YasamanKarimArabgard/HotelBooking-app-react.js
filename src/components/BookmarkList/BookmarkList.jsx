@@ -1,7 +1,7 @@
 import { useBookmarks } from "../Context/BookmarkProvider";
 import { useNavigate } from "react-router-dom";
 import Loader from "../Loader/Loader";
-import Bookmark from "./Bookmark/bookmark";
+import Bookmark from "./Bookmark/Bookmark";
 import BackButton from '../../common/BackButton'
 import { BookmarkIcon } from "@heroicons/react/24/solid";
 
