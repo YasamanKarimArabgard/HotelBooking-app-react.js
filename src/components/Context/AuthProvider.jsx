@@ -26,7 +26,7 @@ function authReducer(state, action) {
 
 const FAKE_USER = {
   name: "Yasaman",
-  email: "user@gmail.com",
+  email: "Yasaman.arabgard@gmail.com",
   password: "1234",
 };
 
@@ -52,6 +52,7 @@ export default function AuthProvier({ children }) {
         isAuthenticated,
         login,
         logout,
+        FAKE_USER
       }}
     >
       {children}

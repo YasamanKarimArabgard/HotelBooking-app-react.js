@@ -34,7 +34,7 @@ const MobileFooter = () => {
                 </li>
                 {/* profile icon */}
                 <li onClick={() => setActiveTab(4)}>
-                    <NavLink to={'/'} className="cursor-pointer text-slate-400">
+                    <NavLink to={'/user-profile'} className="cursor-pointer text-slate-400">
                         <UserCircleIcon className={`w-7 h-7 ${activeTab === 4 && 'text-orange-400'}`}/>
                     </NavLink>
                 </li>
