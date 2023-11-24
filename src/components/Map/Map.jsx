@@ -4,7 +4,6 @@ import { MapContainer, TileLayer, Marker, Popup, useMap, useMapEvent } from "rea
 import { useSearchParams, useNavigate } from "react-router-dom";
 import 'leaflet/dist/leaflet.css';
 
-
 const Map = ({ markerLoactions }) => {
 
     const { loading: isLoactionloading, position: geoCurrentLocation, getPosition } = useGeoLoaction();
@@ -31,10 +30,11 @@ const Map = ({ markerLoactions }) => {
                 className="map"
                 center={mapPosition}
                 zoom={13}
-                scrollWheelZoom={true}>
+                scrollWheelZoom={true}
+                zoomControl={false}>
                 <button
                     onClick={(e) => getPosition(e)}
-                    className="absolute bottom-5 left-5 bg-orange-500 z-[1000] text-xs p-1 px-2 rounded-md text-white font-bold shadow-xl">{isLoactionloading ? 'Loading...' : 'Your current position'}</button>
+                    className="absolute bottom-2 left-2 bg-orange-500 z-[1000] text-xs p-1 px-2 rounded-md text-white font-bold shadow-xl">{isLoactionloading ? 'Loading...' : 'Current location'}</button>
                 <TileLayer
                     attribution='&copy;<a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
