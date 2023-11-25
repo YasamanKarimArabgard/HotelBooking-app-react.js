@@ -16,7 +16,6 @@ import Login from "./components/Login/Login";
 import './App.css';
 import MobileFooter from "./components/MobileFooter/MobileFooter";
 import SearchPage from "./components/Search/SearchPage";
-import Profile from "./components/Profile/Profile";
 
 function App() {
   return (
@@ -30,7 +29,6 @@ function App() {
                 <Route path="/" element={<Locations />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/search" element={<SearchPage />} />
-                <Route path="/user-profile" element={<Profile/>} />
                 <Route path="/hotels" element={<AppLayout />} >
                   <Route index element={<Hotels />} />
                   <Route path=":id" element={<SingleHotel />} />
